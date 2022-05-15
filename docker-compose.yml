@@ -1,0 +1,24 @@
+
+services:
+#  api:
+#    build:
+#      context: ./api_ml/
+#      dockerfile: Dockerfile
+#    image: SwatardBot:latest
+##    networks: ['server-network']
+#    ports:
+#      - 2406:5000
+#    volumes:
+#      - ./data/:/app
+  swatardbot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: julienalardot/swatardbot:latest
+    ports:
+      - 9999:80
+    volumes:
+      - ./data/:/app/data/
+    restart: always
+#    environment:
+#      DISCORD_TOKEN:
